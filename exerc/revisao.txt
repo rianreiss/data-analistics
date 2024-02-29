@@ -1,0 +1,104 @@
+# Em Python, você pode ler o conteúdo de um arquivo de texto usando a função `open()` para abrir o arquivo e, em seguida, métodos como `read()`, `readline()` ou `readlines()` # para ler os dados. Aqui está um exemplo de como ler o conteúdo de um arquivo chamado "dados.txt":
+#-----------------------------------------------------------------------------------------------------------------------
+# passo a passo: de como fazer o upload do arquivo "dados.txt" no Google Colab:
+# primeiro ciclo (1-8)
+1. **Acessar o Google Colab:**
+   Acesse o Google Colab em https://colab.research.google.com/.
+
+2. **Criar ou Fazer Upload de um Notebook:**
+   Crie um novo notebook ou faça upload de um existente. Você pode criar um novo notebook clicando em "Novo Notebook" na página inicial do Colab.
+
+3. **Fazer Upload do Arquivo:**
+   Para fazer o upload do arquivo "dados.txt", execute o seguinte código em uma célula:
+
+#python---------------------------------------------------
+
+from google.colab import files
+uploaded = files.upload()
+
+#python---------------------------------------------------
+ 
+#  Isso abrirá uma caixa de diálogo que permitirá que você selecione o arquivo "dados.txt" do seu computador e faça o upload para o ambiente do Colab.
+
+4. **Verificar o Upload:**
+   Após o upload ser concluído, você verá o nome do arquivo e o tamanho carregados. O arquivo agora está disponível para uso no ambiente do Colab.
+
+5. **Ler e Processar o Arquivo:**
+   Agora que você fez o upload do arquivo, pode usar o código que forneci anteriormente para ler e processar o conteúdo do arquivo "dados.txt".
+
+6. **Executar Células:**
+   Para executar uma célula, clique nela e pressione `Shift + Enter`.
+
+7. **Visualizar Resultados:**
+8.  Os resultados da execução serão exibidos abaixo da célula. No caso do código de leitura do arquivo, você verá as informações impressas na saída.
+#python---------------------------------------------------
+# Abre o arquivo no modo de leitura ('r')
+with open('dados.txt', 'r') as arquivo:
+    linha = arquivo.readline()  # Lê uma linha do arquivo
+    while linha:
+        print(linha)  # Imprime a linha lida
+        linha = arquivo.readline()  # Lê a próxima linha
+
+# Ou, para ler todas as linhas de uma vez:
+with open('dados.txt', 'r') as arquivo:
+    linhas = arquivo.readlines()  # Lê todas as linhas do arquivo
+    for linha in linhas:
+        print(linha)  # Imprime cada linha
+#python---------------------------------------------------
+
+# Lembre-se de que o arquivo "dados.txt" deve estar no mesmo diretório onde o código Python está sendo executado.
+# Certifique-se de que você tenha feito o upload do arquivo "dados.txt" conforme mencionado anteriormente. Aqui está um exemplo passo a passo:
+# Segundo ciclo (1-6...)
+
+1. **Importar a Biblioteca Pandas:**
+   No início de uma célula no Colab, importe a biblioteca Pandas com o seguinte código:
+
+#python---------------------------------------------------
+   import pandas as pd
+#python---------------------------------------------------
+
+2. **Ler o Arquivo e Criar o DataFrame:**
+   Ainda na mesma célula, use o seguinte código para ler o arquivo "dados.txt" e criar um DataFrame:
+
+#python---------------------------------------------------
+   # Lê o arquivo e cria o DataFrame
+   df = pd.read_csv('dados.txt', header=None, names=['Nome', 'Matrícula', 'Data'])
+#python---------------------------------------------------
+
+   Certifique-se de que os campos no arquivo "dados.txt" estejam separados por vírgulas, conforme mencionado anteriormente.
+
+3. **Exibir o DataFrame:**
+   Para ver o DataFrame criado, basta digitar print e o nome `df` na célula e executá-la:
+
+   #python---------------------------------------------------
+   print(df)
+   #python---------------------------------------------------
+
+   Isso exibirá uma tabela formatada dos dados contidos no arquivo "dados.txt".
+
+4. **Manipular e Analisar os Dados:**
+   Com o DataFrame criado, você pode realizar várias operações de análise de dados. Por exemplo, você pode usar comandos como `df.head()`, `df.info()`, `df.describe()`, entre outros.
+
+5. **Visualizar Gráficos e Visualizações:**
+   Se você quiser criar gráficos ou visualizações dos dados, o Pandas oferece suporte a isso. Por exemplo, você pode usar o comando `df.plot()` para criar um gráfico simples.
+
+Lembre-se de que cada código deve ser executado em uma célula separada. Isso permitirá que você visualize e manipule os dados de forma organizada no Google Colab.
+
+Isso cria uma tabela e explorar os dados do arquivo "dados.txt" usando o Pandas no Google Colab!
+
+6. **Para indexar os dados
+#python---------------------------------------------------
+# Ordena os dados pelo campo "Nome"
+df_nome_idx = df.sort_values(by='Nome')
+
+# Exibe o DataFrame ordenado
+print(df_nome_idx)
+#python---------------------------------------------------
+
+Lembre-se de que o arquivo "dados.txt" agora está disponível no diretório em que você está trabalhando no Google Colab. Certifique-se de que o arquivo contenha as informações no formato esperado (Nome, Matrícula, Data) para que o código de leitura funcione corretamente.
+
+Estes são apenas alguns conceitos iniciais de Python 3. À medida que avança, pode aprender sobre classes, módulos, manipulação de arquivos, exceções e muito mais. A prática é essencial, então experimente escrever seu próprio código e explore mais recursos da linguagem.
+
+- Texto e Código para Tópicos de Big Data em Python 
+- Professor Leonardo R.de Oliveira
+
